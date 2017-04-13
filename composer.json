@@ -1,7 +1,7 @@
 {
   "name": "borisperevyazko/module-lazyload",
   "description": "Lazyloading for images on category/search pages",
-  "type": "magento2-module-lazyload",
+  "type": "magento2-module",
   "version": "0.0.1",
   "authors": [
     {
