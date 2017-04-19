@@ -1,0 +1,17 @@
+<?php
+/**
+ * @var Borisperevyazko\Lazyload\Block\Echojs $block
+ */
+?>
+<script>
+    require(["Borisperevyazko_Lazyload/js/echo"], function (echo) {
+        echo.init({
+          offset: 100,
+          throttle: 250,
+          unload: false,
+          callback: function (element, op) {
+
+          }
+        });
+    });
+</script>

@@ -53,18 +53,21 @@ class ImageBuilderPlugin
     }
 
     /**
-     * Before setAttributes
+     * Around create image
      *
      * @param ImageBuilder $subject
-     * @param array $attributes
-     * @return array
+     * @param \Closure $proceed
+     * @return ImageBuilder
      */
-    public function beforeSetAttributes(ImageBuilder $subject, array $attributes)
+    public function aroundCreate(ImageBuilder $subject, \Closure $proceed)
     {
+        $image = $proceed();
         if ($this->helper->isEnabled()) {
-            $attributes['data-echo'] = $this->assetRepo->getUrl(static::DEFINE_SMALL_IMAGE);
+            $image->setCustomAttributes($image->getCustomAttributes()." ".static::DEFINE_ATTRIBUTE_NAME." = \"{$image->getImageUrl()}\"");
+            $image->setImageUrl($this->assetRepo->getUrl(static::DEFINE_SMALL_IMAGE));
         }
 
-        return [$attributes];
+        return $image;
     }
+
 }

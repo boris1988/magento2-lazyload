@@ -4,7 +4,7 @@
     <body>
         <referenceContainer name="content">
             <block name="borisperevyazko.lazyload" class="Borisperevyazko\Lazyload\Block\Echojs"
-                   template="Youwe_Company::js/company-customer-data.phtml"
+                   template="Borisperevyazko_Lazyload::js/echojs.phtml"
                    ifconfig="borisperevyazko_lazyload/general/enable"/>
         </referenceContainer>
     </body>
